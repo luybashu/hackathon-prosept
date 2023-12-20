@@ -1,7 +1,8 @@
 numpy==1.23.5
 pandas==1.5.3
 re==2.2.1
+torch==2.1.2+cpu
 nltk
 sentence-transformers
+transformers
 datetime
-warnings
