@@ -1,7 +1,7 @@
 # Online service for automating the process of product matching 
 
-*November 22 - December 08, 2023*
-Hackathon of the Yandex Practicum Workshop on a task from [Prosept](https://prosept.ru/)
+*November 22 - December 08, 2023*  
+The project got 1st place in the Hackathon of the Yandex Practicum Workshop on a task from [Prosept](https://prosept.ru/)
 
 The customer manufactures several hundred different household and industrial chemical products, which are then sold through dealers. To assess the situation, manage prices, and overall business operations, the customer periodically gathers information on how dealers sell their products. The matching of dealer products with manufacturer products is currently done manually.
 
@@ -13,9 +13,9 @@ The project is cross-functional, and this repository contains the ML-solution, w
 - [Framework](#framework)
 - [Quality Metrics](#quality-metrics)
 - [Technical Solution](#technical-solution)
-- [Использование](#использование)
+- [Usage](#usage)
 - [Stack](#stack)
-- [Команда проекта](#команда-проекта)
+- [Team](#team)
 
 ## Framework 
 As part of the project, an ML-product was developed to automate the process of matching goods.
@@ -41,8 +41,7 @@ As part of the project, an ML-product was developed to automate the process of m
 - MRR (Mean Reciprocal Rank) - Measure of how often the correct option is proposed closer to the beginning of the list (average position of the correct item in the ranked list).
 
 ## Technical Solution
-This service is designed for the analytics - employees of the customer. For each selected dealer product several customer products that are most likely to match that dealer product are suggested. The selection of the most likely suggestions is made using machine learning methods.
-
+This service is designed for the analytics - employees of the customer. For each selected dealer product several customer products that are most likely to match that dealer product are suggested. The selection of the most likely suggestions is made using machine learning methods.  
 This project provides functionality for predicting the top n most similar customer product names for each specific dealer name. The prediction is based on computing the cosine similarity of the vectorized product names. 
 ### Text cleaning
 To standardize the names, the text cleaning function was used inside the main functions:
@@ -59,11 +58,19 @@ To convert textual data into numerical values (vectorization), there are two sol
 - `requirements.txt`: file with a list of dependencies for installing the necessary libraries
   
 ## Usage
-### To install the necessary libraries, run:
+To install the necessary libraries, run:
 ```sh
 $ pip install -r requirements.txt
 ```
-
+Models:
+```sh
+$ python Procept_tfidf.py
+```
+OR 
+```sh
+$ Procept_labse_ru_en.py
+```
+The files Procept_tfidf.py/Procept_labse_ru_en.py describe a function that takes two lists of dictionary parameters (customer database and parsed data from dealer platforms) and returns a dictionary with recommendations.
 
 ### Result of comparison of two models
 
