@@ -52,7 +52,7 @@ To standardize the names, the text cleaning function was used inside the main fu
 ### Two variants of models:  
 To convert textual data into numerical values (vectorization), there are two solutions: 
 1. Procept_tfidf.py based on TF-IDF Vectorizer.
-2. Procept_labse_ru_en.py based on pretrained LaBSE_ru_en model (folder LaBSE_ru_en).
+2. Procept_labse_ru_en.py based on pretrained LaBSE_ru_en model (folder [LaBSE_ru_en](LaBSE_ru_en)).
 ### Files
 - `Procept_tfidf.py`, `Procept_labse_small.py`: files containing the main function for predicting n most similar customer product names   
 - `requirements.txt`: file with a list of dependencies for installing the necessary libraries
