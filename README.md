@@ -54,7 +54,7 @@ To convert textual data into numerical values (vectorization), there are two sol
 1. Procept_tfidf.py based on TF-IDF Vectorizer.
 2. Procept_labse_ru_en.py based on pretrained LaBSE_ru_en model (folder [LaBSE_ru_en](LaBSE_ru_en)).
 ### Files
-- `Procept_tfidf.py`, `Procept_labse_small.py`: files containing the main function for predicting n most similar customer product names   
+- `Procept_tfidf.py`: file containing the main function for predicting n most similar customer product names   
 - `requirements.txt`: file with a list of dependencies for installing the necessary libraries
   
 ## Usage
@@ -62,15 +62,11 @@ To install the necessary libraries, run:
 ```sh
 $ pip install -r requirements.txt
 ```
-Models:
+Model:
 ```sh
 $ python Procept_tfidf.py
 ```
-OR 
-```sh
-$ Procept_labse_ru_en.py
-```
-The files Procept_tfidf.py/Procept_labse_ru_en.py describe a function that takes two lists of dictionary parameters (customer database and parsed data from dealer platforms) and returns a dictionary with recommendations.
+The file Procept_tfidf.py describes a function that takes two lists of dictionary parameters (customer database and parsed data from dealer platforms) and returns a dictionary with recommendations.
 
 ### Result of comparison of two models
 
