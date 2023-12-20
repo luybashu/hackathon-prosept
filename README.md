@@ -1,5 +1,7 @@
 # Online service for automating the process of product matching 
-Development of an ML-product and web interface for the automatic product matching service for the company [Prosept](https://prosept.ru/).
+
+*November 22 - December 08, 2023*
+Hackathon of the Yandex Practicum Workshop on a task from [Prosept](https://prosept.ru/)
 
 The customer manufactures several hundred different household and industrial chemical products, which are then sold through dealers. To assess the situation, manage prices, and overall business operations, the customer periodically gathers information on how dealers sell their products. The matching of dealer products with manufacturer products is currently done manually.
 
@@ -8,16 +10,12 @@ The customer manufactures several hundred different household and industrial che
 The project is cross-functional, and this repository contains the ML-solution, while the backend and frontend are presented in separate repositories: [backend](https://github.com/K1N88/product-markup-backend), [frontend](https://github.com/sergasent/hackaton-pros).
 
 ## Table of Contents
-- [User experience](#user-experience)
 - [Framework](#framework)
 - [Quality Metrics](#quality-metrics)
 - [Technical Solution](#technical-solution)
 - [Использование](#использование)
 - [Stack](#stack)
 - [Команда проекта](#команда-проекта)
-
-## User experience
-This service is designed for the analytics - employees of the customer. For each selected dealer product several customer products that are most likely to match that dealer product are suggested. The selection of the most likely suggestions is made using machine learning methods.
 
 ## Framework 
 As part of the project, an ML-product was developed to automate the process of matching goods.
@@ -43,25 +41,29 @@ As part of the project, an ML-product was developed to automate the process of m
 - MRR (Mean Reciprocal Rank) - Measure of how often the correct option is proposed closer to the beginning of the list (average position of the correct item in the ranked list).
 
 ## Technical Solution
-This project provides functionality for predicting the top n most similar customer product names for each specific dealer name. The prediction is based on computing the cosine similarity of the vectorized product names. To convert textual data into numerical values (vectorization), TF-IDF Vectorizer or pretrained LaBSE model were used.
-### Files
-- `Procept_tfidf.py`, `Procept_labse_small.py`: files containing the main function for predicting n most similar customer product names   
-- `requirements.txt`: file with a list of dependencies for installing the necessary libraries  
-### Data preprocessing
+This service is designed for the analytics - employees of the customer. For each selected dealer product several customer products that are most likely to match that dealer product are suggested. The selection of the most likely suggestions is made using machine learning methods.
+
+This project provides functionality for predicting the top n most similar customer product names for each specific dealer name. The prediction is based on computing the cosine similarity of the vectorized product names. 
+### Text cleaning
 To standardize the names, the text cleaning function was used inside the main functions:
 - to separate concatenated words and digits with spaces
 - to remove punctuation
 - to convert text to lowercase
 - to remove the words "просепт/prosept"
-
+### Two variants of models:  
+To convert textual data into numerical values (vectorization), there are two solutions: 
+1. Procept_tfidf.py based on TF-IDF Vectorizer.
+2. Procept_labse_ru_en.py based on pretrained LaBSE_ru_en model (folder LaBSE_ru_en).
+### Files
+- `Procept_tfidf.py`, `Procept_labse_small.py`: files containing the main function for predicting n most similar customer product names   
+- `requirements.txt`: file with a list of dependencies for installing the necessary libraries
+  
 ## Usage
 ### To install the necessary libraries, run:
 ```sh
 $ pip install -r requirements.txt
-``
-### Two variants of models:  
-1. Procept_tfidf.py based on TF-IDF Vectorizer.
-2. Procept_labse_small.py based on LaBSE en-ru model.
+```
+
 
 ### Result of comparison of two models
 
@@ -78,6 +80,11 @@ The TF-IDF model was chosen due to its faster performance.
 -  *cosine similarity*
 
 ## Team
-**- Грибанов Михаил - Leader** [Telegram](https://t.me/gribanov_m) 
-**- Сергеев Дмитрий**   [Telegram](https://t.me/SDI84) 
-**- Шубина Любовь** [Telegram](https://t.me/luybashu)
+- Anastasia Litvinyuk - Project Manager
+- Mikhail Gribanov - Data Science
+- Dmitry Sergeev - Data Science
+- Liubov Shubina - Data Science
+- Dmitry Lukonin - Backend Developer
+- Konstantin Nazarov - Backend Developer
+- Anastasiia Nistratova - Frontend Developer
+- Sergey Berdnikov - Frontend Developer
